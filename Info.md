@@ -17,9 +17,14 @@
 ## 12. String system + Regex
 ## 13. Reference system
 ## 14. Line oriented => no semicolons
+## 15. Infinity Functions Return Values
+## 16. No Classes
+## 17. by reference by default
+## 18. Multi-File Projects
 
 # Secondary Goals
 ## 1. Network Support
+## 2. Infinity Functions Parameters
 
 # Notes
 ## 1. LD file extension
@@ -29,6 +34,7 @@
 
 # For the future
 ## 1. Inline Documentation (doxygen)
+## 2. Multithreading (automatic OpenMP)
 
 # For aplha development time
 ## 1. No Exceptions
