@@ -1,4 +1,4 @@
-main(copy int a, int b){
+def main(copy int a, int b){
 }
 main(1, 2)
 main(a, copy b)
