@@ -81,6 +81,10 @@ public:
         //input.clear();
     }
 
+    std::vector<std::string> getStringList() {
+        return stringList;
+    }
+
 private:
     std::vector<std::string> input;
     std::vector<std::string> stringList;

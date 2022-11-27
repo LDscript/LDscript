@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "lexer.h"
+#include "parser.h"
 
 std::string ouput = "./output/out.cpp";
 std::string input = "../TestSrc/example.lds";
@@ -24,6 +25,10 @@ int main(int argc, char** argv) {
     lex.removeEmptyLines();
 
     lex.generateList();
+
+    parser par(lex.getStringList());
+
+    par.parse();
 
     return 0;
 }
