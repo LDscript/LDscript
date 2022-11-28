@@ -14,15 +14,15 @@ int main(int argc, char** argv) {
     cxxopts::Options options("lds", "A LDScript compiler");
 
     options.add_options()
-            ("f,file", "Input file", cxxopts::value<std::string>())
+            ("f,files", "Input files", cxxopts::value<std::vector<std::string>>())
             ("o,output", "Output file", cxxopts::value<std::string>()->default_value("./out.exe"))
             ("d,debug", "Generate debug info", cxxopts::value<bool>()->default_value("false"))
             ("l,log", "Generate log information", cxxopts::value<bool>()->default_value("false"))
             ("h,help", "Print help")
             ;
 
-    options.parse_positional({"file"});
-    options.custom_help("<file> [options]");
+    options.parse_positional({"files"});
+    options.custom_help("<files> [options]");
     options.positional_help("");
     options.show_positional_help();
 
@@ -41,5 +41,12 @@ int main(int argc, char** argv) {
 
     Compiler lds;
 
-    return 0;
+    lds.setEmitDebugInfo(result["debug"].as<bool>());
+    lds.setEmitLogInfo(result["log"].as<bool>());
+
+    for (auto& file : result["files"].as<std::vector<std::string>>())
+        lds.addSource(file);
+
+    int exitCode = lds.compile();
+    return exitCode;
 }

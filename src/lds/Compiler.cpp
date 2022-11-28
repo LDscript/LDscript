@@ -4,5 +4,22 @@
 
 #include "Compiler.h"
 
-#include <iostream>
-#include <memory>
+Compiler::Compiler() {
+
+}
+
+void Compiler::setEmitDebugInfo(bool emitDebugInfo) {
+
+}
+
+void Compiler::setEmitLogInfo(bool emitLogInfo) {
+
+}
+
+void Compiler::addSource(const std::string& source) {
+
+}
+
+int Compiler::compile() {
+
+}
