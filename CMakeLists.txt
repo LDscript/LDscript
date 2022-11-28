@@ -11,9 +11,11 @@ set(LLVM_LINK_COMPONENTS
 include_directories(./src)
 include_directories(./src/generated)
 include_directories(./vendor/antlr4-runtime/runtime/src)
+include_directories(./vendor/cxxopts-3/include)
 include_directories("C:/Program Files/LLVM/include")
 
 add_subdirectory(./vendor/antlr4-runtime/)
+add_subdirectory(./vendor/cxxopts-3/)
 
 link_directories("C:/Program Files/LLVM/lib")
 add_executable(LDscript src/main.cpp
@@ -22,4 +24,4 @@ add_executable(LDscript src/main.cpp
         src/lds/Compiler.cpp
         src/lds/Compiler.h)
 
-target_link_libraries(LDscript antlr4_static)
+target_link_libraries(LDscript antlr4_static cxxopts -static-libgcc -static-libstdc++)

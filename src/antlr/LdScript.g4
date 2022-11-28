@@ -34,7 +34,8 @@ IDENTIFIER : [a-zA-Z_][a-zA-Z_0-9]* ;
 // COMMENT and WS are stripped from the output token stream by sending
 // to a different channel 'skip'
 
-COMMENT : '//' .+? ('\n'|EOF) -> skip ;
+COMMENT : ('//'|'#') .+? ('\n'|EOF) -> skip ;
+BLOCK_COMMENT : '/*' .*? '*/' -> skip ;
 
 WS : [ \r\t\u000C\n]+ -> skip ;
 
