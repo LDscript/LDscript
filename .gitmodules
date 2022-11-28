@@ -1,0 +1,4 @@
+[submodule "vendor/lib/llvm-project"]
+	path = vendor/lib/llvm-project
+	url = https://github.com/llvm/llvm-project
+	branch = release/15.x
